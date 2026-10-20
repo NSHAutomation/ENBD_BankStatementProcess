@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="cUlDGCntX0Warj0mp9zkNA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="businessonline2.emiratesnbd.com/iportalweb/PortalLoginServlet" DesignTimeRectangle="463, 517, 168, 36" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='A' aaname='Filters' /&gt;" Guid="a5ee5296-aca7-4286-83ce-10f336bf31e7" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='f' title='businessONLINE' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="5e35bf43cffc24d8a79a9812308d2ca1.jpg" xmlns="">0KNXfBwwU3EKnbP211t-EAg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Hover</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

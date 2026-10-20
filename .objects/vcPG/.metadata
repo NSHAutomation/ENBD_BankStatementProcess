@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome businessONLINE",
+  "Type": "App",
+  "Id": "vcPGcNBiqk6PzWhtEf2hXA",
+  "Reference": "wIyEPjsK0keg3wV-E7qNPQ/vcPGcNBiqk6PzWhtEf2hXA",
+  "Created": "2026-10-19T07:58:01.6393985Z",
+  "Updated": "2026-10-19T07:58:01.6393985Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

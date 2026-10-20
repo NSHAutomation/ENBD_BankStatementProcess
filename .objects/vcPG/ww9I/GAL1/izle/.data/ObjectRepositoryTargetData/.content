@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="RbBZpTeitkiWR4q_GuOJFw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="businessonline2.emiratesnbd.com/iportalweb/PortalLoginServlet" DesignTimeRectangle="1829, 741, 20, 20" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='DIV' aaname='*' class='x-tool x-tool-pin' idx='2' /&gt;" Guid="2b231178-b2e4-48c0-9bfc-12c3aaf78907" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='f' title='businessONLINE' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="e74ed3217af925cba7fc744f0e15702f.jpg" xmlns="">06sQaOoNHNUyhjSWIssOELQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

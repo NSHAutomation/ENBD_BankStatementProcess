@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome businessONLINE",
+  "Type": "Screen",
+  "Id": "GAL1i07jFk6xSR_2kac3Fg",
+  "Reference": "wIyEPjsK0keg3wV-E7qNPQ/GAL1i07jFk6xSR_2kac3Fg",
+  "ParentRef": "wIyEPjsK0keg3wV-E7qNPQ/ww9IWXwhtUe-qrvkqK9D5g",
+  "Created": "2026-10-19T07:58:01.8161573Z",
+  "Updated": "2026-10-19T07:58:01.8161573Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

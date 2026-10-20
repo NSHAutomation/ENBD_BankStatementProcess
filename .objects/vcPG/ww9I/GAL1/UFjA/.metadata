@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Transaction Date",
+  "Type": "Element",
+  "Id": "UFjA__PNpk-fEoQzfvpctA",
+  "Reference": "wIyEPjsK0keg3wV-E7qNPQ/UFjA__PNpk-fEoQzfvpctA",
+  "ParentRef": "wIyEPjsK0keg3wV-E7qNPQ/GAL1i07jFk6xSR_2kac3Fg",
+  "Created": "2026-10-19T11:16:13.5797386Z",
+  "Updated": "2026-10-19T11:16:13.5797386Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

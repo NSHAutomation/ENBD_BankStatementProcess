@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Export To Excel",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "tA1c11GytE6ATOGqcmWJlg",
+  "Reference": "wIyEPjsK0keg3wV-E7qNPQ/tA1c11GytE6ATOGqcmWJlg",
+  "ParentRef": "wIyEPjsK0keg3wV-E7qNPQ/GAL1i07jFk6xSR_2kac3Fg",
+  "Created": "2026-10-19T11:21:48.4740874Z",
+  "Updated": "2026-10-19T11:21:48.4740874Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

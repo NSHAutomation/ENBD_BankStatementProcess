@@ -1,0 +1,17 @@
+﻿{
+  "Name": "OK-ToDate",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "iXi2fDky4EapSfn2ZBXUQg",
+  "Reference": "wIyEPjsK0keg3wV-E7qNPQ/iXi2fDky4EapSfn2ZBXUQg",
+  "ParentRef": "wIyEPjsK0keg3wV-E7qNPQ/GAL1i07jFk6xSR_2kac3Fg",
+  "Created": "2026-10-19T09:29:30.2631446Z",
+  "Updated": "2026-10-19T09:31:38.3137405Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

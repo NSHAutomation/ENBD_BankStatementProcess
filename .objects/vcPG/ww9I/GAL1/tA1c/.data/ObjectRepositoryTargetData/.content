@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="pHMlMA7aS0WlQ19tIcnAoA" Reference="wIyEPjsK0keg3wV-E7qNPQ/tA1c11GytE6ATOGqcmWJlg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="businessonline1.emiratesnbd.com/iportalweb/PortalLoginServlet" DesignTimeRectangle="1583, 785, 83, 20" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='A' class='x-menu-item' visibleinnertext='Export To Excel' /&gt;&lt;webctrl tag='SPAN' aaname='Export To Excel' /&gt;" Guid="de7adc18-d086-4cc7-80e6-8b312a251a77" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='f' title='businessONLINE' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="1a41b1c0c67dd8ab9d9c2c54d5f50ce3.jpg" xmlns="">0zdfsDoM3DEu4Xx177zcu-w</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

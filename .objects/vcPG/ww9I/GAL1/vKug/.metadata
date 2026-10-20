@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Enter Filter Text...",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "vKugWbIZWkqte6qm5t4rpQ",
+  "Reference": "wIyEPjsK0keg3wV-E7qNPQ/vKugWbIZWkqte6qm5t4rpQ",
+  "ParentRef": "wIyEPjsK0keg3wV-E7qNPQ/GAL1i07jFk6xSR_2kac3Fg",
+  "Created": "2026-10-19T08:33:25.0134452Z",
+  "Updated": "2026-10-19T08:33:25.0134452Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

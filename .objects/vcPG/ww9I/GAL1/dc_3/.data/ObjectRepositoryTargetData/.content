@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="uhA4R9iGpUiv_SgptOXySA" Reference="wIyEPjsK0keg3wV-E7qNPQ/dc_37sj4dUmM9fxtUJRV0A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="businessonline2.emiratesnbd.com/iportalweb/PortalLoginServlet" DesignTimeRectangle="269, 122, 149, 48" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Account Services' tag='SPAN' /&gt;" Guid="4f2c960b-1b7b-4b8b-b88e-5bb960de3777" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='businessONLINE - Google Chrome' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="4de4cd9ba2232af8b7ad3a2d0a6f9935.jpg" xmlns="">04j8blycu9E-xkZ8l3_qp3w</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

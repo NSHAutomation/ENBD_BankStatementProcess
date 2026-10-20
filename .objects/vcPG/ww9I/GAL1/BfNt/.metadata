@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Click 'IMG'",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "BfNtigOcqE6OU9es8B1Crw",
+  "Reference": "wIyEPjsK0keg3wV-E7qNPQ/BfNtigOcqE6OU9es8B1Crw",
+  "ParentRef": "wIyEPjsK0keg3wV-E7qNPQ/GAL1i07jFk6xSR_2kac3Fg",
+  "Created": "2026-10-19T08:39:06.7227399Z",
+  "Updated": "2026-10-19T08:39:06.7227399Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

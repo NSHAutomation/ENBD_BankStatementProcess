@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="bVHth0lhqE6naZozTNmWYg" Reference="wIyEPjsK0keg3wV-E7qNPQ/f1VxK0f_xkKG86oKb2R4rg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="businessonline1.emiratesnbd.com/iportalweb/PortalLoginServlet" DesignTimeRectangle="1726, 766, 177, 40" ElementVisibilityArgument="Interactive" Guid="cf781a86-ccab-47d7-91ea-5be0006c2dff" ImageAccuracyArgument="0.9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALEAAAAoCAYAAACxQBtOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH3SURBVHhe7dqxjRpBGEBhl+GYBk5UAA1AAzRA5gQyW6IA5xYdOLnAARlyCU5ogJQCiOf0VvzWnH3ynX0zlv/1+yS0zOzskjyNRqd7U6TkjFjpGbHSM2KlZ8RKz4iVnhErPSNWekas9IxY6Rmx0jNipWfE6u7zl2/l46evt1F7RqzuiPjt3ftuIb844svlUubzeZlMJo8+0+m0nE6n26p+NptN2e/3t5GyIeBeIf92xMfj8Tbzdxlxfr1CbhZxHdn1ei2r1WpYyy69XC7Lbrd7cudmTezqPMOz8fxisRjmt9vt9zWGnFuPkJtFTHjr9XoIlDURG2PCJXIwH7HGPdZHuKyrvwd34vFoHfKrz8QRJIiS3ZOdl/UxN5vNhiuY5z5j4q2fZ8xvnM/nYb6O1ojHpWXIzc/EP8ZGrHXUdcT1roxYGxHXv2XE4/Luw/2/GTH3OFLEsQJc6524HrP+VzuxEY9TBMy1hWYRc5/wuBIoIRMn3zn3RoD17hv3eCdj5ok1vhvx+LQOGK8+E/M5HA4/RUdwhEeoHBG4z1rewbsCz8R7Iu6nIuZ9rDHkvHoEjBdH/Kci4jpc/X96BQwjVnfxl4geAaN7xJL/ACQ9w4iVnhErPSNWekas9IxY6Rmx0jNipWfESs+IlZ4RKz0jVnpGrPSMWMmV8gBkOfMjFE3RMAAAAABJRU5ErkJggg==" ImageOccurrenceArgument="1" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='f' title='businessONLINE' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="1812, 741, 20, 20" FullSelectorArgument="&lt;webctrl tag='DIV' aaname='*' class='x-tool x-tool-pin' idx='2' /&gt;" Guid="1bd48322-1bfb-4475-a40c-85fd8809173e" SearchSteps="Selector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="e994084c78e375d69be3d52cb6ffa89f.jpg" xmlns="">0sLG3dV2wBUaWhcMx-63g9g</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Hover</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

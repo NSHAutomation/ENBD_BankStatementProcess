@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="knGkkMhxLE-lpNWYMqm6Xw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="136, 929, 1751, 17" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd ctrlid='1001' aaname='File name:' /&gt;" Guid="c2f463ed-eefb-4e68-bbe1-471f69b3cb54" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='*' title='Save As' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="17cc75eaf6ab7aa9c6aa30a6fdc5e76f.jpg" xmlns="">0ulEnDML_AECe0fFjAjSQVw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
