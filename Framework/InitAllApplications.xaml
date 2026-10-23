@@ -122,9 +122,15 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1449,1626" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1449,5513" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="is_DailyFolderExist" />
       <Variable x:TypeArguments="x:String" Name="customeDateSelection" />
@@ -135,26 +141,26 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]">
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="586,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:FolderExistsX DisplayName="Folder Exists" Exists="[is_DailyFolderExist]" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[&quot;C:\Users\SalesBot\Desktop\LAPBOT\Finance\ENBD_BankStatement\BOT\&quot;+Date.Now.ToString(&quot;yyyy&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MM-yyyy&quot;)]">
+    <ui:FolderExistsX DisplayName="Folder Exists" Exists="[is_DailyFolderExist]" sap:VirtualizedContainerService.HintSize="586,175" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[Path.Combine(in_Config(&quot;DailyAccountActivitiesPath&quot;).ToString,Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MM-yyyy&quot;))]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:FolderExistsX>
-    <If Condition="[is_DailyFolderExist]" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[is_DailyFolderExist]" sap:VirtualizedContainerService.HintSize="586,1074" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -165,7 +171,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[out_dt_BankDetails]" DisplayName="Read Range Workbook-Bank Details" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="[&quot;C:\Users\SalesBot\Desktop\LAPBOT\Finance\ENBD_BankStatement\BOT\&quot;+Date.Now.ToString(&quot;yyyy&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MM-yyyy&quot;)+&quot;\List of bank accounts.xlsx&quot;]" />
+          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[out_dt_BankDetails]" DisplayName="Read Range Workbook-Bank Details" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="[Path.Combine(in_Config(&quot;DailyAccountActivitiesPath&quot;).ToString,Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MM-yyyy&quot;)+&quot;\List Of bank accounts.xlsx&quot;)]" />
         </Sequence>
       </If.Then>
       <If.Else>
@@ -176,14 +182,14 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[&quot;C:\Users\SalesBot\Desktop\LAPBOT\Finance\ENBD_BankStatement\BOT\&quot;+Date.Now.ToString(&quot;yyyy&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MM-yyyy&quot;)]" />
-          <ui:CopyFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[&quot;C:\Users\SalesBot\Desktop\LAPBOT\Finance\ENBD_BankStatement\BOT\&quot;+Date.Now.ToString(&quot;yyyy&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MM-yyyy&quot;)]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="CopyFile_1" Path="C:\Users\SalesBot\Desktop\LAPBOT\Finance\ENBD_BankStatement\List of bank accounts.xlsx" />
-          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[out_dt_BankDetails]" DisplayName="Read Range Workbook-Bank Details" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[&quot;C:\Users\SalesBot\Desktop\LAPBOT\Finance\ENBD_BankStatement\BOT\&quot;+Date.Now.ToString(&quot;yyyy&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MM-yyyy&quot;)+&quot;\List of bank accounts.xlsx&quot;]" />
+          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Path.Combine(in_Config(&quot;DailyAccountActivitiesPath&quot;).ToString,Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MM-yyyy&quot;))]" />
+          <ui:CopyFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[Path.Combine(in_Config(&quot;DailyAccountActivitiesPath&quot;).ToString,Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MM-yyyy&quot;))]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="CopyFile_1" Path="[in_Config(&quot;ListOfBanksExcel&quot;).ToString]" />
+          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[out_dt_BankDetails]" DisplayName="Read Range Workbook-Bank Details" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[Path.Combine(in_Config(&quot;DailyAccountActivitiesPath&quot;).ToString,Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MM-yyyy&quot;)+&quot;\List Of bank accounts.xlsx&quot;)]" />
         </Sequence>
       </If.Else>
     </If>
-    <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="YesNo" Caption="Custome Date" ChosenButton="[customeDateSelection]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="452,123" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Do you want to enter custome date?&quot;]" TopMost="True" />
-    <If Condition="[customeDateSelection = &quot;Yes&quot;]" sap:VirtualizedContainerService.HintSize="452,1173" sap2010:WorkflowViewState.IdRef="If_3">
+    <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="YesNo" Caption="Custome Date" ChosenButton="[customeDateSelection]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="586,123" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Do you want to enter custome date?&quot;]" TopMost="True" />
+    <If Condition="[customeDateSelection = &quot;Yes&quot;]" sap:VirtualizedContainerService.HintSize="586,1173" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -235,10 +241,10 @@
         </Sequence>
       </If.Else>
     </If>
-    <If Condition="[out_FromDate.Replace(&quot;,&quot;,&quot;&quot;).IsNumeric AndAlso out_ToDate.Replace(&quot;,&quot;,&quot;&quot;).IsNumeric]" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="If_5">
+    <If Condition="[out_FromDate.Replace(&quot;,&quot;,&quot;&quot;).IsNumeric AndAlso out_ToDate.Replace(&quot;,&quot;,&quot;&quot;).IsNumeric]" sap:VirtualizedContainerService.HintSize="586,1594" sap2010:WorkflowViewState.IdRef="If_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -335,10 +341,10 @@
         </Sequence>
       </If.Else>
     </If>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="452,48" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch-Open ENDB Portal" sap:VirtualizedContainerService.HintSize="586,1145" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -349,7 +355,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome businessONLINE" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,579" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" ScopeGuid="73ed798e-c17f-44cb-9205-dfd1f1d52304" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome businessONLINE" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,579" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" ScopeGuid="73ed798e-c17f-44cb-9205-dfd1f1d52304" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>

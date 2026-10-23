@@ -5,6 +5,7 @@
     <x:Property Name="in_AccountName" Type="InArgument(x:String)" />
     <x:Property Name="in_FromDate" Type="InArgument(x:String)" />
     <x:Property Name="in_TransactionNumber" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -115,9 +116,13 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadReports" sap:VirtualizedContainerService.HintSize="1913,8726" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadReports" sap:VirtualizedContainerService.HintSize="1449,9085" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="fromDate" />
       <Variable x:TypeArguments="s:String[]" Name="toDate" />
@@ -127,27 +132,27 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Sequence-DownloadStatement" sap:VirtualizedContainerService.HintSize="758,8703" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Sequence-DownloadStatement" sap:VirtualizedContainerService.HintSize="758,9062" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch-DownloadStatement" sap:VirtualizedContainerService.HintSize="724,8620" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Catch-DownloadStatement" sap:VirtualizedContainerService.HintSize="724,8979" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <TryCatch.Try>
-          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="722,7825" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="722,8184" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome businessONLINE-DownloadStatement" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="688,7325" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3d426158-dfb7-4e04-9862-7bee4f19eab8" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome businessONLINE-DownloadStatement" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="688,7684" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3d426158-dfb7-4e04-9862-7bee4f19eab8" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="686,7121" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="686,7480" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -284,30 +289,30 @@
                         <uix:TargetAnchorable BrowserURL="businessonline2.emiratesnbd.com/iportalweb/PortalLoginServlet" ContentHash="x_7oHeZHmkm-gj9bUnu8Rw" DesignTimeRectangle="1513, 699, 18, 15" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='Go' type='button' /&gt;" Guid="09093b28-c2d5-4c48-aac1-0b63625282a8" InformativeScreenshot="714be09a3db2f65db4c510147f5f408d.jpg" IsResponsive="True" Reference="wIyEPjsK0keg3wV-E7qNPQ/X64dhNVoGEaZmuuaB9VsbQ" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='f' title='businessONLINE' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NCheckState DisplayName="Check App State 'Transaction details not…'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="652,2622" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="3d426158-dfb7-4e04-9862-7bee4f19eab8" Timeout="5" Version="V5">
+                    <uix:NCheckState DisplayName="Check App State 'Transaction details not…'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="652,2981" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="3d426158-dfb7-4e04-9862-7bee4f19eab8" Timeout="5" Version="V5">
                       <uix:NCheckState.IfExists>
-                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="650,463" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="650,822" sap2010:WorkflowViewState.IdRef="Sequence_8">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;No Transactions Found &quot;+in_AccountNumber]" />
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'DIV Close'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,57" sap2010:WorkflowViewState.IdRef="NClick_25" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3d426158-dfb7-4e04-9862-7bee4f19eab8" Version="V5">
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'DIV Close'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,194" sap2010:WorkflowViewState.IdRef="NClick_25" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3d426158-dfb7-4e04-9862-7bee4f19eab8" Version="V5">
                             <uix:NClick.Target>
                               <uix:TargetAnchorable BrowserURL="businessonline1.emiratesnbd.com" ContentHash="ROXwGD7V4UaV2eo399Dc2Q" DesignTimeRectangle="71, 938, 85, 44" ElementVisibilityArgument="Interactive" Guid="8ba4213c-0487-49eb-a210-9966cf850290" ImageAccuracyArgument="0.9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFUAAAAsCAYAAAAU2PRTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJaSURBVGhD7ZrBThRBEIbnMXwDjx714tULHr34AF59Aq4c5UQ46hP4ANyMb2CMwRAICUEhbjTEACqHLfNttqC26RmZme1Gzf8lzc5MdQ/Jt9U1k2w1JpaOpBZAUgtwTerZ+YUdHp3Yzt7E3m8faYSBE9zgqIsFqSz4uPvFJl9P7cfPC5tOp/OIwAVOcIMjXLVxKXX/4Jsdfj6RyBuAI1zhLMdMKtaZJPqBs1zGNtQH0lkZ2h+c4S6tsQ2mqRNiGLhLs7XhiUYBFsPAHQ4jDa8K2vrDwR0OIzOpYhySWgBJLYCkFkBSCyCpBZDUAtyK1NOzX/bk2Uu7c2/1cmy8ejuPmh1PvtuDx+u29WZ7fuXforrUdx8+2d2Ha1mJz1dfL5xL6g3wDI1CHWTfX3kx+8xJZY1nNTHmODHGF8Y9nHRXcMy1klSVGsV1kUpFWhQZz5kTY/E89yWyG3xHlKKq1FRAG8SZx/x47ERZXfcklmYm8x493fzjFzuGv15qW3aTbUhNt3eUT9yvx5GWiGVTVWqboJQ+UiNci9KI16ihKVWl5mqcE0W2HTtd94kx1rCWe9SkqlQgg9peqTyrUpHMjXLieSouZrYLjg+mGqKrSwWXFutcTnLMTuI+N5Xi295HXJf+r9JC4Vak/u9IagEktQCSWgBJLYCkFiArVb/7Dyf7u786VMaR7VBRL9U4sr1U6vobDs6yXX/8wbT6U/vT2p86/1QndQ9whKvOTmoH66QzdYICLMFX4AInuMFRLkOdBalAfWABTzReFTSuBk5wk9bQlGtSxXgkdemY/QaBX+/xvBy/pAAAAABJRU5ErkJggg==" ImageOccurrenceArgument="1" InformativeScreenshot="23752f1dd56f2d5cf24011c85f018b85.jpg" Reference="wIyEPjsK0keg3wV-E7qNPQ/McEVh3Q_JkmVgyoEqbTr2g" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='f' title='businessONLINE' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" WaitForReadyArgument="Interactive" />
                             </uix:NClick.Target>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </uix:NClick>
-                          <ui:WriteCell Cell="[&quot;F&quot; + (in_TransactionNumber + 1).ToString()]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="616,57" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" Text="No Transactions Found" WorkbookPath="[&quot;C:\Users\SalesBot\Desktop\LAPBOT\Finance\ENBD_BankStatement\BOT\&quot;+Date.Now.ToString(&quot;yyyy&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MM-yyyy&quot;)+&quot;\List of bank accounts.xlsx&quot;]">
+                          <ui:WriteCell Cell="[&quot;F&quot; + (in_TransactionNumber + 1).ToString()]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="616,279" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" Text="No Transactions Found" WorkbookPath="[Path.Combine(in_Config(&quot;DailyAccountActivitiesPath&quot;).ToString,Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MM-yyyy&quot;)+&quot;\List Of bank accounts.xlsx&quot;)]">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
@@ -348,7 +353,7 @@
                             <uix:NHover.Target>
                               <uix:TargetAnchorable BrowserURL="businessonline1.emiratesnbd.com/iportalweb/PortalLoginServlet" ContentHash="bVHth0lhqE6naZozTNmWYg" DesignTimeRectangle="1726, 766, 177, 40" ElementVisibilityArgument="Interactive" Guid="cf781a86-ccab-47d7-91ea-5be0006c2dff" ImageAccuracyArgument="0.9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALEAAAAoCAYAAACxQBtOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH3SURBVHhe7dqxjRpBGEBhl+GYBk5UAA1AAzRA5gQyW6IA5xYdOLnAARlyCU5ogJQCiOf0VvzWnH3ynX0zlv/1+yS0zOzskjyNRqd7U6TkjFjpGbHSM2KlZ8RKz4iVnhErPSNWekas9IxY6Rmx0jNipWfE6u7zl2/l46evt1F7RqzuiPjt3ftuIb844svlUubzeZlMJo8+0+m0nE6n26p+NptN2e/3t5GyIeBeIf92xMfj8Tbzdxlxfr1CbhZxHdn1ei2r1WpYyy69XC7Lbrd7cudmTezqPMOz8fxisRjmt9vt9zWGnFuPkJtFTHjr9XoIlDURG2PCJXIwH7HGPdZHuKyrvwd34vFoHfKrz8QRJIiS3ZOdl/UxN5vNhiuY5z5j4q2fZ8xvnM/nYb6O1ojHpWXIzc/EP8ZGrHXUdcT1roxYGxHXv2XE4/Luw/2/GTH3OFLEsQJc6524HrP+VzuxEY9TBMy1hWYRc5/wuBIoIRMn3zn3RoD17hv3eCdj5ok1vhvx+LQOGK8+E/M5HA4/RUdwhEeoHBG4z1rewbsCz8R7Iu6nIuZ9rDHkvHoEjBdH/Kci4jpc/X96BQwjVnfxl4geAaN7xJL/ACQ9w4iVnhErPSNWekas9IxY6Rmx0jNipWfESs+IlZ4RKz0jVnpGrPSMWMmV8gBkOfMjFE3RMAAAAABJRU5ErkJggg==" ImageOccurrenceArgument="1" InformativeScreenshot="e994084c78e375d69be3d52cb6ffa89f.jpg" IsResponsive="True" Reference="wIyEPjsK0keg3wV-E7qNPQ/f1VxK0f_xkKG86oKb2R4rg" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='f' title='businessONLINE' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" WaitForReadyArgument="Interactive">
                                 <uix:TargetAnchorable.Anchors>
-                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                     <uix:Target DesignTimeRectangle="1812, 741, 20, 20" FullSelectorArgument="&lt;webctrl tag='DIV' aaname='*' class='x-tool x-tool-pin' idx='2' /&gt;" Guid="1bd48322-1bfb-4475-a40c-85fd8809173e" SearchSteps="Selector" />
                                   </scg:List>
                                 </uix:TargetAnchorable.Anchors>
@@ -425,7 +430,7 @@
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Account_Statement_19Oct…'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,297" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="SameAsCard" ScopeIdentifier="5054d360-46ba-4a00-ab16-9811d0a56cdd" Text="[&quot;C:\Users\SalesBot\Desktop\LAPBOT\Finance\ENBD_BankStatement\BOT\&quot;+Date.Now.ToString(&quot;yyyy&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MM-yyyy&quot;)+&quot;\AccountActivities-&quot;+in_AccountNumber]" Version="V5">
+                                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Account_Statement_19Oct…'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,297" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="SameAsCard" ScopeIdentifier="5054d360-46ba-4a00-ab16-9811d0a56cdd" Text="[Path.Combine(in_Config(&quot;DailyAccountActivitiesPath&quot;).ToString,Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MM-yyyy&quot;)+&quot;\AccountActivities-&quot;+in_AccountNumber)]" Version="V5">
                                     <uix:NTypeInto.Target>
                                       <uix:TargetAnchorable ContentHash="knGkkMhxLE-lpNWYMqm6Xw" DesignTimeRectangle="136, 929, 1751, 17" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd ctrlid='1001' aaname='File name:' /&gt;" Guid="c2f463ed-eefb-4e68-bbe1-471f69b3cb54" InformativeScreenshot="17cc75eaf6ab7aa9c6aa30a6fdc5e76f.jpg" IsResponsive="True" Reference="wIyEPjsK0keg3wV-E7qNPQ/IwB9qF7UVEGbU4RWI6jxCw" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='*' title='Save As' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
                                     </uix:NTypeInto.Target>
