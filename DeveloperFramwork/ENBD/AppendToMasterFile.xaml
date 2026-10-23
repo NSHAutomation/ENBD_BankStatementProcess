@@ -1,7 +1,8 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="AppendToMasterFile" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="AppendToMasterFile" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umae="clr-namespace:UiPath.Mail.Activities.Enums;assembly=UiPath.Mail.Activities" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_AccountNumber" Type="InArgument(x:String)" />
     <x:Property Name="in_AccountName" Type="InArgument(x:String)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -46,6 +47,11 @@
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>System.Security</x:String>
       <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Activities.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -105,9 +111,16 @@
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AppendToMasterFile" sap:VirtualizedContainerService.HintSize="1208,2283" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AppendToMasterFile" sap:VirtualizedContainerService.HintSize="1449,2510" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_AccountActivities" />
     </Sequence.Variables>
@@ -116,13 +129,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Sequence-Merge And Remove Duplicates" sap:VirtualizedContainerService.HintSize="650,2260" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Sequence-Merge And Remove Duplicates" sap:VirtualizedContainerService.HintSize="650,2487" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch-Merge And Remove Duplicates" sap:VirtualizedContainerService.HintSize="616,2177" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Catch-Merge And Remove Duplicates" sap:VirtualizedContainerService.HintSize="616,2404" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <TryCatch.Try>
           <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="522,1671" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
@@ -131,9 +144,9 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;File Merging Started &quot;+in_AccountNumber]" />
-            <ui:ReadRange AddHeaders="True" DataTable="[dt_AccountActivities]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="488,227" sap2010:WorkflowViewState.IdRef="ReadRange_3" Range="B18" SheetName="Sheet0" WorkbookPath="[&quot;C:\Users\SalesBot\Desktop\LAPBOT\Finance\ENBD_BankStatement\BOT\&quot;+Date.Now.ToString(&quot;yyyy&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MM-yyyy&quot;)+&quot;\AccountActivities-&quot;+in_AccountNumber+&quot;.xlsx&quot;]" />
-            <ui:AppendRange DataTable="[dt_AccountActivities]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="488,227" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="Sheet1" WorkbookPath="[&quot;C:\Users\SalesBot\Desktop\LAPBOT\Finance\ENBD_BankStatement\BOT\MasterData\&quot;+in_AccountName+&quot;-&quot;+in_AccountNumber+&quot;.xlsx&quot;]" />
-            <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="488,982" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
+            <ui:ReadRange AddHeaders="True" DataTable="[dt_AccountActivities]" DisplayName="Read Range Workbook-Account Activity" sap:VirtualizedContainerService.HintSize="488,227" sap2010:WorkflowViewState.IdRef="ReadRange_3" Range="B18" SheetName="Sheet0" WorkbookPath="[Path.Combine(in_Config(&quot;DailyAccountActivitiesPath&quot;).ToString,Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MM-yyyy&quot;)+&quot;\AccountActivities-&quot;+in_AccountNumber+&quot;.xlsx&quot;)]" />
+            <ui:AppendRange DataTable="[dt_AccountActivities]" DisplayName="Append Range Workbook-Master File" sap:VirtualizedContainerService.HintSize="488,227" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="Sheet1" WorkbookPath="[Path.Combine(in_Config(&quot;MasterFilePath&quot;).ToString,in_AccountName+&quot;-&quot;+in_AccountNumber+&quot;.xlsx&quot;)]" />
+            <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope-Master File" sap:VirtualizedContainerService.HintSize="488,982" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
               <ueab:ExcelProcessScopeX.Body>
                 <ActivityAction x:TypeArguments="ui:IExcelProcess">
                   <ActivityAction.Argument>
@@ -145,7 +158,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="452,852" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" ResizeWindow="None" WorkbookPath="[&quot;C:\Users\SalesBot\Desktop\LAPBOT\Finance\ENBD_BankStatement\BOT\MasterData\&quot;+in_AccountName+&quot;-&quot;+in_AccountNumber+&quot;.xlsx&quot;]">
+                    <ueab:ExcelApplicationCard DisplayName="Use Excel File-Master File" sap:VirtualizedContainerService.HintSize="452,852" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" ResizeWindow="None" WorkbookPath="[Path.Combine(in_Config(&quot;MasterFilePath&quot;).ToString,in_AccountName+&quot;-&quot;+in_AccountNumber+&quot;.xlsx&quot;)]">
                       <ueab:ExcelApplicationCard.Body>
                         <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                           <ActivityAction.Argument>
@@ -158,7 +171,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Removing Duplicates &quot;+in_AccountNumber]" />
-                            <ueab:RemoveDuplicatesX Columns="{x:Null}" ColumnsCompareMode="AllColumns" DisplayName="Remove Duplicates" sap:VirtualizedContainerService.HintSize="416,231" sap2010:WorkflowViewState.IdRef="RemoveDuplicatesX_1" Range="[Excel.Sheet(&quot;Sheet1&quot;)]" />
+                            <ueab:RemoveDuplicatesX Columns="{x:Null}" ColumnsCompareMode="AllColumns" DisplayName="Remove Duplicates-Master File" sap:VirtualizedContainerService.HintSize="416,231" sap2010:WorkflowViewState.IdRef="RemoveDuplicatesX_1" Range="[Excel.Sheet(&quot;Sheet1&quot;)]" />
                             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Removing Duplicates Completed &quot;+in_AccountNumber]" />
                           </Sequence>
                         </ActivityAction>
@@ -176,12 +189,24 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="522,349" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="522,576" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
+                <ui:SendOutlookMail Account="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" UseRichTextEditor="{x:Null}" Bcc="[in_Config(&quot;BCCMail&quot;).ToString]" Body="[in_Config(&quot;SystemExceptionMailBody&quot;).ToString]" ConnectionMode="LegacyConfiguration" CreatedAfterSolutionSupport="False" DisplayName="Send Outlook Desktop Mail Message" sap:VirtualizedContainerService.HintSize="488,227" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[in_Config(&quot;SystemExceptionMailSubject&quot;).ToString +&quot; | Account Number: &quot;+in_AccountNumber]" To="[in_Config(&quot;ToMail&quot;).ToString]" UseISConnection="False">
+                  <ui:SendOutlookMail.ConnectionDetailsBackupSlot>
+                    <usau:BackupSlot x:TypeArguments="umae:ConnectionDetails" StoredValue="{x:Null}">
+                      <usau:BackupSlot.BackupValues>
+                        <scg:Dictionary x:TypeArguments="umae:ConnectionDetails, scg:List(x:Object)" />
+                      </usau:BackupSlot.BackupValues>
+                    </usau:BackupSlot>
+                  </ui:SendOutlookMail.ConnectionDetailsBackupSlot>
+                  <ui:SendOutlookMail.Files>
+                    <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                  </ui:SendOutlookMail.Files>
+                </ui:SendOutlookMail>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[exception.Message+Environment.NewLine+exception.Source]" />
                 <Throw Exception="[new SystemException(&quot;Failed To Update Master File&quot;)]" sap:VirtualizedContainerService.HintSize="488,114" sap2010:WorkflowViewState.IdRef="Throw_1" />
               </Sequence>

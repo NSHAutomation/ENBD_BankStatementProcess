@@ -118,9 +118,13 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1913,3340" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1449,3746" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="accountName" />
       <Variable x:TypeArguments="x:String" Name="accountNumber" />
@@ -136,29 +140,29 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="650,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
     <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="650,89" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
-    <Sequence sap:VirtualizedContainerService.HintSize="650,2976" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="650,3382" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="616,2893" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="616,3299" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <TryCatch.Try>
-          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="522,2680" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="540,3086" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_BankAccount]" DisplayName="Read Range Workbook-Bank Details" sap:VirtualizedContainerService.HintSize="488,57" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[&quot;C:\Users\SalesBot\Desktop\LAPBOT\Finance\ENBD_BankStatement\BOT\&quot;+Date.Now.ToString(&quot;yyyy&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MM-yyyy&quot;)+&quot;\List of bank accounts.xlsx&quot;]">
+            <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_BankAccount]" DisplayName="Read Range Workbook-Bank Details" sap:VirtualizedContainerService.HintSize="506,227" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[Path.Combine(in_Config(&quot;DailyAccountActivitiesPath&quot;).ToString,Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MM-yyyy&quot;)+&quot;\List Of bank accounts.xlsx&quot;)]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ReadRange>
-            <Assign sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign sap:VirtualizedContainerService.HintSize="506,175" sap2010:WorkflowViewState.IdRef="Assign_3">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Boolean">[out_Is_AlreadyProcessed]</OutArgument>
               </Assign.To>
@@ -172,7 +176,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <If Condition="[out_Is_AlreadyProcessed]" sap:VirtualizedContainerService.HintSize="488,2388" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[out_Is_AlreadyProcessed]" sap:VirtualizedContainerService.HintSize="506,2624" sap2010:WorkflowViewState.IdRef="If_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -180,17 +184,17 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,226" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="504,226" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[in_TransactionItem(&quot;Account Number&quot;).ToString+&quot; Skipping due to already processed&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="470,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[in_TransactionItem(&quot;Account Number&quot;).ToString+&quot; Skipping due to already processed&quot;]" />
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,2000" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="504,2236" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="is_AccountActivitiesExist" />
                   </Sequence.Variables>
@@ -200,7 +204,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Assign-AccountNumber" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <Assign DisplayName="Assign-AccountNumber" sap:VirtualizedContainerService.HintSize="470,175" sap2010:WorkflowViewState.IdRef="Assign_1">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[accountNumber]</OutArgument>
                     </Assign.To>
@@ -209,12 +213,12 @@
                     </Assign.Value>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </Assign>
-                  <Assign DisplayName="Assign-AccountName" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign DisplayName="Assign-AccountName" sap:VirtualizedContainerService.HintSize="470,175" sap2010:WorkflowViewState.IdRef="Assign_2">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[accountName]</OutArgument>
                     </Assign.To>
@@ -223,12 +227,12 @@
                     </Assign.Value>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </Assign>
-                  <ui:FileExistsX DisplayName="File Exists-MasterFile" Exists="[is_MasterFileExist]" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[&quot;C:\Users\SalesBot\Desktop\LAPBOT\Finance\ENBD_BankStatement\BOT\MasterData\&quot;+accountName+&quot;-&quot;+accountNumber+&quot;.xlsx&quot;]">
+                  <ui:FileExistsX DisplayName="File Exists-MasterFile" Exists="[is_MasterFileExist]" sap:VirtualizedContainerService.HintSize="470,175" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[Path.Combine(in_Config(&quot;MasterFilePath&quot;).ToString,accountName+&quot;-&quot;+accountNumber+&quot;.xlsx&quot;)]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -236,7 +240,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:FileExistsX>
-                  <If Condition="[is_MasterFileExist]" DisplayName="If-Create MasterFile If not exist" sap:VirtualizedContainerService.HintSize="452,683" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[is_MasterFileExist]" DisplayName="If-Create MasterFile If not exist" sap:VirtualizedContainerService.HintSize="470,683" sap2010:WorkflowViewState.IdRef="If_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -260,37 +264,38 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:BuildDataTable DataTable="[dt_MasterDataFields]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="416,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Transaction_x0020_Date&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Value_x0020_Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Narration&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Transaction_x0020_Reference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Debit&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Credit&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Running_x0020_Balance&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Remarks&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                        <ui:WriteRange StartingCell="{x:Null}" DataTable="[dt_MasterDataFields]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="416,270" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="[&quot;C:\Users\SalesBot\Desktop\LAPBOT\Finance\ENBD_BankStatement\BOT\MasterData\&quot;+accountName+&quot;-&quot;+accountNumber+&quot;.xlsx&quot;]" />
+                        <ui:WriteRange StartingCell="{x:Null}" DataTable="[dt_MasterDataFields]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="416,270" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="[Path.Combine(in_Config(&quot;MasterFilePath&quot;).ToString,accountName+&quot;-&quot;+accountNumber+&quot;.xlsx&quot;)]" />
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:FileExistsX DisplayName="File Exists-Account Activities" Exists="[is_AccountActivitiesExist]" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="FileExistsX_2" Path="[&quot;C:\Users\SalesBot\Desktop\LAPBOT\Finance\ENBD_BankStatement\BOT\&quot;+Date.Now.ToString(&quot;yyyy&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MM-yyyy&quot;)+&quot;\AccountActivities-&quot;+accountNumber+&quot;.xlsx&quot;]" />
-                  <If Condition="[is_AccountActivitiesExist]" DisplayName="If-skip download of account activities file if already existing" sap:VirtualizedContainerService.HintSize="452,625" sap2010:WorkflowViewState.IdRef="If_3">
+                  <ui:FileExistsX DisplayName="File Exists-Account Activities" Exists="[is_AccountActivitiesExist]" sap:VirtualizedContainerService.HintSize="470,175" sap2010:WorkflowViewState.IdRef="FileExistsX_2" Path="[Path.Combine(in_Config(&quot;AccountListExcelPath&quot;).ToString,Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MM-yyyy&quot;)+&quot;\AccountActivities-&quot;+accountNumber+&quot;.xlsx&quot;)]" />
+                  <If Condition="[is_AccountActivitiesExist]" DisplayName="If-skip download of account activities file if already existing" sap:VirtualizedContainerService.HintSize="470,625" sap2010:WorkflowViewState.IdRef="If_3">
                     <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,226" sap2010:WorkflowViewState.IdRef="Sequence_12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Account Activities File Already Exist &quot;+accountNumber]" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Account Activities File Already Exist &quot;+accountNumber]" />
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,228" sap2010:WorkflowViewState.IdRef="Sequence_13">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="DownloadReports - Invoke Workflow File (DeveloperFramwork\ENBD\DownloadReports.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="DeveloperFramwork\ENBD\DownloadReports.xaml">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="DownloadReports - Invoke Workflow File (DeveloperFramwork\ENBD\DownloadReports.xaml)" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="DeveloperFramwork\ENBD\DownloadReports.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="in_ToDate">[in_ToDate]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="in_AccountNumber">[accountNumber]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="in_AccountName">[accountName]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="in_FromDate">[in_FromDate]</InArgument>
                             <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">[in_TransactionNumber]</InArgument>
+                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -302,10 +307,11 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="AppendToMasterFile - Invoke Workflow File (DeveloperFramwork\ENBD\AppendToMasterFile.xaml)" sap:VirtualizedContainerService.HintSize="452,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="DeveloperFramwork\ENBD\AppendToMasterFile.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="AppendToMasterFile - Invoke Workflow File (DeveloperFramwork\ENBD\AppendToMasterFile.xaml)" sap:VirtualizedContainerService.HintSize="470,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="DeveloperFramwork\ENBD\AppendToMasterFile.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_AccountNumber">[accountNumber]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_AccountName">[accountName]</InArgument>
+                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                 </Sequence>
@@ -319,7 +325,7 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="522,25" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="540,25" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -336,7 +342,7 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="522,25" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="540,25" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -349,7 +355,7 @@
           </Catch>
         </TryCatch.Catches>
         <TryCatch.Finally>
-          <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="522,25" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="540,25" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>

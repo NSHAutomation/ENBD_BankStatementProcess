@@ -1,7 +1,18 @@
 {
-  "Settings": {
-    "logF_BusinessProcessName": "Framework"
-  },
+ "Settings": {
+  "logF_BusinessProcessName": "Framework",
+  "MasterFilePath": "C:\\Users\\SalesBot 2\\OneDrive - NSHMI Development LLC\\Shortcuts\\Finance_Dept - ENBD Bank Statements-BOT\\MasterData\\",
+  "DailyAccountActivitiesPath": "C:\\Users\\SalesBot 2\\OneDrive - NSHMI Development LLC\\Shortcuts\\Finance_Dept - ENBD Bank Statements-BOT\\BOT\\",
+  "AccountListExcelPath": "C:\\Users\\SalesBot 2\\OneDrive - NSHMI Development LLC\\Shortcuts\\Finance_Dept - ENBD Bank Statements-BOT\\List of bank accounts.xlsx",
+  "ListOfBanksExcel":"C:\\Users\\SalesBot 2\\OneDrive - NSHMI Development LLC\\Shortcuts\\Finance_Dept - ENBD Bank Statements-BOT\\List of bank accounts.xlsx",
+  "ToMail":"abm@ncmme.ae",
+  "BCCMail":"automation@nshama.ae",
+  "CCMail":"am@ncmme.ae",
+  "SuccessMailSubject":"ENBD Bank Statements | Process Completed",
+  "SuccessMailBody":"<P><SPAN>Greetings,</SPAN></P><br><br><P><SPAN>ENDB Bank Statements Process has completed</SPAN></P><br><br><P><SPAN>Thank you</SPAN></P>",
+  "SystemExceptionMailSubject":"ENBD Bank Statements | Precess Failed",
+  "SystemExceptionMailBody":"<P><SPAN>Greetings,</SPAN></P><br><br><P><SPAN>ENDB Bank Statements Process Failed And Retrying</SPAN></P><br><br><P><SPAN>Thank you</SPAN></P>"
+},
   "Constants": {
     "MaxRetryNumber": 0,
     "MaxConsecutiveSystemExceptions": 0,
