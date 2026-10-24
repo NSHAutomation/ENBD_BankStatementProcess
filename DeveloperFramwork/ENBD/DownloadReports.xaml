@@ -122,7 +122,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadReports" sap:VirtualizedContainerService.HintSize="1449,9085" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadReports" sap:VirtualizedContainerService.HintSize="1913,9342" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="fromDate" />
       <Variable x:TypeArguments="s:String[]" Name="toDate" />
@@ -132,34 +132,34 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Sequence-DownloadStatement" sap:VirtualizedContainerService.HintSize="758,9062" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Sequence-DownloadStatement" sap:VirtualizedContainerService.HintSize="758,9319" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch-DownloadStatement" sap:VirtualizedContainerService.HintSize="724,8979" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Catch-DownloadStatement" sap:VirtualizedContainerService.HintSize="724,9236" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <TryCatch.Try>
-          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="722,8184" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="722,8441" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome businessONLINE-DownloadStatement" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="688,7684" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3d426158-dfb7-4e04-9862-7bee4f19eab8" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome businessONLINE-DownloadStatement" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="688,7941" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3d426158-dfb7-4e04-9862-7bee4f19eab8" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="686,7480" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="686,7737" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="652,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Processing Account &quot;+in_AccountNumber]" />
-                    <uix:NHover DisplayName="Hover 'Account Number'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" HoverTime="3" sap2010:WorkflowViewState.IdRef="NHover_1" InteractionMode="DebuggerApi" ScopeIdentifier="3d426158-dfb7-4e04-9862-7bee4f19eab8" Version="V5">
+                    <uix:NHover DisplayName="Hover 'Account Number'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" HoverTime="3" sap2010:WorkflowViewState.IdRef="NHover_1" InteractionMode="HardwareEvents" ScopeIdentifier="3d426158-dfb7-4e04-9862-7bee4f19eab8" Version="V5">
                       <uix:NHover.Target>
                         <uix:TargetAnchorable BrowserURL="businessonline2.emiratesnbd.com/iportalweb/PortalLoginServlet" ContentHash="vTskBlM_EUa3mEkz8qtS3w" DesignTimeRectangle="299, 360, 172, 30" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Account Number' tag='DIV' /&gt;" Guid="95f8db82-fd9d-45ce-b5f0-f3205d0cc299" InformativeScreenshot="270c5f357f92d1790d9263bb7f1b45c6.jpg" IsResponsive="True" Reference="wIyEPjsK0keg3wV-E7qNPQ/sF0w40w4m0O-FNNo-Fm0qA" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='f' title='businessONLINE' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
                       </uix:NHover.Target>
@@ -179,6 +179,7 @@
                         <uix:TargetAnchorable BrowserURL="businessonline2.emiratesnbd.com/iportalweb/PortalLoginServlet" ContentHash="CAvnAeqykUaDuqvrLnsh_A" DesignTimeRectangle="673, 529, 125, 43" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='LI' class='x-menu-list-item  x-menu-list-item-indent' /&gt;&lt;webctrl tag='INPUT' type='text' /&gt;" Guid="29032544-b237-4d76-8b71-58999cb8e2ec" InformativeScreenshot="7c0a46a2c32f3606d1eed50f664b5349.jpg" Reference="wIyEPjsK0keg3wV-E7qNPQ/vKugWbIZWkqte6qm5t4rpQ" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='f' title='businessONLINE' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                       </uix:NTypeInto.Target>
                     </uix:NTypeInto>
+                    <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,257" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="HardwareEvents" ScopeIdentifier="3d426158-dfb7-4e04-9862-7bee4f19eab8" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Version="V5" />
                     <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'IMG'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,266" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3d426158-dfb7-4e04-9862-7bee4f19eab8" Version="V5">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="businessonline2.emiratesnbd.com/iportalweb/PortalLoginServlet" ContentHash="kJZh31eNY0CqjRmewQQQ1Q" DesignTimeRectangle="70, 396, 20, 20" ElementType="Icon" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tableRow='1' tag='IMG' class='x-action-col-icon x-action-col-0  doubleclickicon' /&gt;" Guid="0710dfd4-e122-4097-8f59-87889aae9bae" InformativeScreenshot="92ba92c70d3853fcaa232a014482a1eb.jpg" Reference="wIyEPjsK0keg3wV-E7qNPQ/fuGeNuqul0mXdGZ0uYvjyA" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='f' title='businessONLINE' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
