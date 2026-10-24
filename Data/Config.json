@@ -1,10 +1,10 @@
 {
  "Settings": {
   "logF_BusinessProcessName": "Framework",
-  "MasterFilePath": "C:\\Users\\SalesBot 2\\OneDrive - NSHMI Development LLC\\Shortcuts\\Finance_Dept - ENBD Bank Statements-BOT\\MasterData\\",
-  "DailyAccountActivitiesPath": "C:\\Users\\SalesBot 2\\OneDrive - NSHMI Development LLC\\Shortcuts\\Finance_Dept - ENBD Bank Statements-BOT\\BOT\\",
-  "AccountListExcelPath": "C:\\Users\\SalesBot 2\\OneDrive - NSHMI Development LLC\\Shortcuts\\Finance_Dept - ENBD Bank Statements-BOT\\List of bank accounts.xlsx",
-  "ListOfBanksExcel":"C:\\Users\\SalesBot 2\\OneDrive - NSHMI Development LLC\\Shortcuts\\Finance_Dept - ENBD Bank Statements-BOT\\List of bank accounts.xlsx",
+  "MasterFilePath": "C:\\Users\\SalesBot\\OneDrive - NSHMI Development LLC (1)\\Finance_Dept - ENBD Bank Statement-BOT\\MasterData\\",
+  "DailyAccountActivitiesPath": "C:\\Users\\SalesBot\\OneDrive - NSHMI Development LLC (1)\\Finance_Dept - ENBD Bank Statement-BOT\\BOT\\",
+  "AccountListExcelPath": "C:\\Users\\SalesBot\\OneDrive - NSHMI Development LLC (1)\\Finance_Dept - ENBD Bank Statement-BOT\\List of bank accounts.xlsx",
+  "ListOfBanksExcel":"C:\\Users\\SalesBot\\OneDrive - NSHMI Development LLC (1)\\Finance_Dept - ENBD Bank Statement-BOT\\List of bank accounts.xlsx",
   "ToMail":"abm@ncmme.ae",
   "BCCMail":"automation@nshama.ae",
   "CCMail":"am@ncmme.ae",
@@ -25,6 +25,10 @@
     "ExceptionMessage_ConsecutiveErrors": "The maximum number of consecutive system exceptions was reached. ",
     "RetryNumberGetTransactionItem": 2,
     "RetryNumberSetTransactionStatus": 2,
-    "ShouldMarkJobAsFaulted": false
+    "ShouldMarkJobAsFaulted": false,
+	"SalesBot1MasterFilePath": "C:\\Users\\SalesBot\\OneDrive - NSHMI Development LLC (1)\\Finance_Dept - ENBD Bank Statement-BOT\\MasterData\\",
+	"SalesBot1DailyAccountActivitiesPath": "C:\\Users\\SalesBot\\OneDrive - NSHMI Development LLC (1)\\Finance_Dept - ENBD Bank Statement-BOT\\BOT\\",
+	"SalesBot1AccountListExcelPath": "C:\\Users\\SalesBot\\OneDrive - NSHMI Development LLC (1)\\Finance_Dept - ENBD Bank Statement-BOT\\List of bank accounts.xlsx",
+	"SalesBot1ListOfBanksExcel":"C:\\Users\\SalesBot\\OneDrive - NSHMI Development LLC (1)\\Finance_Dept - ENBD Bank Statement-BOT\\List of bank accounts.xlsx"
   }
 }
