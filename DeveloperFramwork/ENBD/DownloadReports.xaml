@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="DownloadReports" this:DownloadReports.in_ToDate="19-Oct-2026" this:DownloadReports.in_AccountNumber="5365910565704" this:DownloadReports.in_FromDate="18-Oct-2026" this:DownloadReports.in_TransactionNumber="0" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="DownloadReports" this:DownloadReports.in_ToDate="19-Oct-2026" this:DownloadReports.in_AccountNumber="5365910565704" this:DownloadReports.in_FromDate="18-Oct-2026" this:DownloadReports.in_TransactionNumber="0" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:umae="clr-namespace:UiPath.Mail.Activities.Enums;assembly=UiPath.Mail.Activities" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_ToDate" Type="InArgument(x:String)" />
     <x:Property Name="in_AccountNumber" Type="InArgument(x:String)" />
@@ -56,6 +56,11 @@
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Activities.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -120,9 +125,12 @@
       <AssemblyReference>System.IO.Packaging</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadReports" sap:VirtualizedContainerService.HintSize="1913,9342" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadReports" sap:VirtualizedContainerService.HintSize="1913,9626" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="fromDate" />
       <Variable x:TypeArguments="s:String[]" Name="toDate" />
@@ -132,13 +140,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Sequence-DownloadStatement" sap:VirtualizedContainerService.HintSize="758,9319" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Sequence-DownloadStatement" sap:VirtualizedContainerService.HintSize="758,9603" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch-DownloadStatement" sap:VirtualizedContainerService.HintSize="724,9236" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Catch-DownloadStatement" sap:VirtualizedContainerService.HintSize="724,9520" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <TryCatch.Try>
           <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="722,8441" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
@@ -521,12 +529,61 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="722,349" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="722,633" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
+                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome businessONLINE" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="688,57" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" ScopeGuid="32d5d84a-359d-4814-af3d-413ed28f4158" Version="V2">
+                  <uix:NApplicationCard.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,245" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'DIV Close'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_28" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d5d84a-359d-4814-af3d-413ed28f4158" Version="V5">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="businessonline1.emiratesnbd.com" ContentHash="ROXwGD7V4UaV2eo399Dc2Q" DesignTimeRectangle="71, 938, 85, 44" ElementVisibilityArgument="Interactive" Guid="8ba4213c-0487-49eb-a210-9966cf850290" ImageAccuracyArgument="0.9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFUAAAAsCAYAAAAU2PRTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJaSURBVGhD7ZrBThRBEIbnMXwDjx714tULHr34AF59Aq4c5UQ46hP4ANyMb2CMwRAICUEhbjTEACqHLfNttqC26RmZme1Gzf8lzc5MdQ/Jt9U1k2w1JpaOpBZAUgtwTerZ+YUdHp3Yzt7E3m8faYSBE9zgqIsFqSz4uPvFJl9P7cfPC5tOp/OIwAVOcIMjXLVxKXX/4Jsdfj6RyBuAI1zhLMdMKtaZJPqBs1zGNtQH0lkZ2h+c4S6tsQ2mqRNiGLhLs7XhiUYBFsPAHQ4jDa8K2vrDwR0OIzOpYhySWgBJLYCkFkBSCyCpBZDUAtyK1NOzX/bk2Uu7c2/1cmy8ejuPmh1PvtuDx+u29WZ7fuXforrUdx8+2d2Ha1mJz1dfL5xL6g3wDI1CHWTfX3kx+8xJZY1nNTHmODHGF8Y9nHRXcMy1klSVGsV1kUpFWhQZz5kTY/E89yWyG3xHlKKq1FRAG8SZx/x47ERZXfcklmYm8x493fzjFzuGv15qW3aTbUhNt3eUT9yvx5GWiGVTVWqboJQ+UiNci9KI16ihKVWl5mqcE0W2HTtd94kx1rCWe9SkqlQgg9peqTyrUpHMjXLieSouZrYLjg+mGqKrSwWXFutcTnLMTuI+N5Xi295HXJf+r9JC4Vak/u9IagEktQCSWgBJLYCkFiArVb/7Dyf7u786VMaR7VBRL9U4sr1U6vobDs6yXX/8wbT6U/vT2p86/1QndQ9whKvOTmoH66QzdYICLMFX4AInuMFRLkOdBalAfWABTzReFTSuBk5wk9bQlGtSxXgkdemY/QaBX+/xvBy/pAAAAABJRU5ErkJggg==" ImageOccurrenceArgument="1" InformativeScreenshot="23752f1dd56f2d5cf24011c85f018b85.jpg" Reference="wIyEPjsK0keg3wV-E7qNPQ/McEVh3Q_JkmVgyoEqbTr2g" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='f' title='businessONLINE' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" WaitForReadyArgument="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </ActivityAction>
+                  </uix:NApplicationCard.Body>
+                  <uix:NApplicationCard.OCREngine>
+                    <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                      <ActivityFunc.Argument>
+                        <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                      </ActivityFunc.Argument>
+                    </ActivityFunc>
+                  </uix:NApplicationCard.OCREngine>
+                  <uix:NApplicationCard.TargetApp>
+                    <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" ContentHash="jRP1xLjs7ES66QgcZgIF2g" IconBase64="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" InformativeScreenshot="3ed8e222134aa713a0ff6753038ca9b1.jpg" Reference="wIyEPjsK0keg3wV-E7qNPQ/GAL1i07jFk6xSR_2kac3Fg" Selector="&lt;html app='chrome.exe' htmlwindowname='f' title='businessONLINE' /&gt;" Url="https://businessonline2.emiratesnbd.com/iportalweb/PortalLoginServlet" Version="V3" />
+                  </uix:NApplicationCard.TargetApp>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NApplicationCard>
+                <ui:SendOutlookMail Account="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" UseRichTextEditor="{x:Null}" Bcc="[in_Config(&quot;BCCMail&quot;).ToString]" Body="[in_Config(&quot;SystemExceptionMailBody&quot;).ToString]" ConnectionMode="Undefined" CreatedAfterSolutionSupport="False" DisplayName="Send Outlook Desktop Mail Message" sap:VirtualizedContainerService.HintSize="688,227" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[in_Config(&quot;SystemExceptionMailSubject&quot;).ToString]" To="[in_Config(&quot;SystemExceptionMailSubject&quot;).ToString]" UseISConnection="False">
+                  <ui:SendOutlookMail.ConnectionDetailsBackupSlot>
+                    <usau:BackupSlot x:TypeArguments="umae:ConnectionDetails" StoredValue="{x:Null}">
+                      <usau:BackupSlot.BackupValues>
+                        <scg:Dictionary x:TypeArguments="umae:ConnectionDetails, scg:List(x:Object)" />
+                      </usau:BackupSlot.BackupValues>
+                    </usau:BackupSlot>
+                  </ui:SendOutlookMail.ConnectionDetailsBackupSlot>
+                  <ui:SendOutlookMail.Files>
+                    <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                  </ui:SendOutlookMail.Files>
+                </ui:SendOutlookMail>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="688,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[exception.Message+Environment.NewLine+exception.Source]" />
                 <Throw Exception="[new SystemException(&quot;Failed To Download Statement&quot;)]" sap:VirtualizedContainerService.HintSize="688,114" sap2010:WorkflowViewState.IdRef="Throw_2" />
               </Sequence>
