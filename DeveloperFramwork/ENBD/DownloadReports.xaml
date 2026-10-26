@@ -130,7 +130,7 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadReports" sap:VirtualizedContainerService.HintSize="1913,9626" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadReports" sap:VirtualizedContainerService.HintSize="1449,9763" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="fromDate" />
       <Variable x:TypeArguments="s:String[]" Name="toDate" />
@@ -140,27 +140,27 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Sequence-DownloadStatement" sap:VirtualizedContainerService.HintSize="758,9603" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Sequence-DownloadStatement" sap:VirtualizedContainerService.HintSize="758,9740" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch-DownloadStatement" sap:VirtualizedContainerService.HintSize="724,9520" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Catch-DownloadStatement" sap:VirtualizedContainerService.HintSize="724,9657" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <TryCatch.Try>
-          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="722,8441" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="722,8578" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome businessONLINE-DownloadStatement" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="688,7941" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3d426158-dfb7-4e04-9862-7bee4f19eab8" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome businessONLINE-DownloadStatement" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="688,8078" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3d426158-dfb7-4e04-9862-7bee4f19eab8" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="686,7737" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="686,7874" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -298,7 +298,7 @@
                         <uix:TargetAnchorable BrowserURL="businessonline2.emiratesnbd.com/iportalweb/PortalLoginServlet" ContentHash="x_7oHeZHmkm-gj9bUnu8Rw" DesignTimeRectangle="1513, 699, 18, 15" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='Go' type='button' /&gt;" Guid="09093b28-c2d5-4c48-aac1-0b63625282a8" InformativeScreenshot="714be09a3db2f65db4c510147f5f408d.jpg" IsResponsive="True" Reference="wIyEPjsK0keg3wV-E7qNPQ/X64dhNVoGEaZmuuaB9VsbQ" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='f' title='businessONLINE' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NCheckState DisplayName="Check App State 'Transaction details not…'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="652,2981" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="3d426158-dfb7-4e04-9862-7bee4f19eab8" Timeout="5" Version="V5">
+                    <uix:NCheckState DisplayName="Check App State 'Transaction details not…'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="652,3118" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="3d426158-dfb7-4e04-9862-7bee4f19eab8" Timeout="5" Version="V5">
                       <uix:NCheckState.IfExists>
                         <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="650,822" sap2010:WorkflowViewState.IdRef="Sequence_8">
                           <sap:WorkflowViewStateService.ViewState>
@@ -330,19 +330,19 @@
                         </Sequence>
                       </uix:NCheckState.IfExists>
                       <uix:NCheckState.IfNotExists>
-                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="650,1823" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="650,1960" sap2010:WorkflowViewState.IdRef="Sequence_9">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="3" DisplayName="Click 'Transaction Date'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,57" sap2010:WorkflowViewState.IdRef="NClick_21" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3d426158-dfb7-4e04-9862-7bee4f19eab8" Version="V5">
+                          <uix:NClick ActivateBefore="True" ClickType="Single" CursorMotionType="[UiPath.UIAutomationNext.Enums.CursorMotionType.Smooth]" DelayAfter="3" DisplayName="Click 'Transaction Date'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,194" sap2010:WorkflowViewState.IdRef="NClick_21" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3d426158-dfb7-4e04-9862-7bee4f19eab8" Version="V5">
                             <uix:NClick.Target>
                               <uix:TargetAnchorable BrowserURL="businessonline2.emiratesnbd.com/iportalweb/PortalLoginServlet" ContentHash="T9LVGHpSNESDb0RjzuPCzg" DesignTimeRectangle="139, 791, 246, 30" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='DIV' aaname='Transaction Date' /&gt;" Guid="51b12b9f-a84f-46be-b26f-94eaf716bc0d" InformativeScreenshot="b8617e3a68199e7ae42a8b4e8601ee05.jpg" IsResponsive="True" Reference="wIyEPjsK0keg3wV-E7qNPQ/UFjA__PNpk-fEoQzfvpctA" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='f' title='businessONLINE' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
                             </uix:NClick.Target>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
@@ -572,7 +572,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </uix:NApplicationCard>
-                <ui:SendOutlookMail Account="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" UseRichTextEditor="{x:Null}" Bcc="[in_Config(&quot;BCCMail&quot;).ToString]" Body="[in_Config(&quot;SystemExceptionMailBody&quot;).ToString]" ConnectionMode="Undefined" CreatedAfterSolutionSupport="False" DisplayName="Send Outlook Desktop Mail Message" sap:VirtualizedContainerService.HintSize="688,227" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[in_Config(&quot;SystemExceptionMailSubject&quot;).ToString]" To="[in_Config(&quot;SystemExceptionMailSubject&quot;).ToString]" UseISConnection="False">
+                <ui:SendOutlookMail Account="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" UseRichTextEditor="{x:Null}" Bcc="[in_Config(&quot;BCCMail&quot;).ToString]" Body="[in_Config(&quot;SystemExceptionMailBody&quot;).ToString]" ConnectionMode="LegacyConfiguration" CreatedAfterSolutionSupport="False" DisplayName="Send Outlook Desktop Mail Message" sap:VirtualizedContainerService.HintSize="688,227" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[in_Config(&quot;SystemExceptionMailSubject&quot;).ToString]" To="[in_Config(&quot;SystemExceptionMailSubject&quot;).ToString]" UseISConnection="False">
                   <ui:SendOutlookMail.ConnectionDetailsBackupSlot>
                     <usau:BackupSlot x:TypeArguments="umae:ConnectionDetails" StoredValue="{x:Null}">
                       <usau:BackupSlot.BackupValues>
