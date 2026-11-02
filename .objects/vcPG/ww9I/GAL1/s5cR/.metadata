@@ -1,0 +1,13 @@
+﻿{
+  "Name": "We are loading your sta…",
+  "Type": "Element",
+  "Id": "s5cRgcoFzEuK-Sk7Nfgwpg",
+  "Reference": "wIyEPjsK0keg3wV-E7qNPQ/s5cRgcoFzEuK-Sk7Nfgwpg",
+  "ParentRef": "wIyEPjsK0keg3wV-E7qNPQ/GAL1i07jFk6xSR_2kac3Fg",
+  "Created": "2026-10-29T09:45:05.9937203Z",
+  "Updated": "2026-10-29T09:45:05.9937203Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

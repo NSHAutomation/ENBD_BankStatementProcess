@@ -2,8 +2,8 @@
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="out_dt_BankDetails" Type="OutArgument(sd:DataTable)" />
-    <x:Property Name="out_FromDate" Type="OutArgument(x:String)" />
-    <x:Property Name="out_ToDate" Type="OutArgument(x:String)" />
+    <x:Property Name="io_FromDate" Type="InOutArgument(x:String)" />
+    <x:Property Name="io_ToDate" Type="InOutArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -130,7 +130,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1913,5759" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1913,4742" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="is_DailyFolderExist" />
       <Variable x:TypeArguments="x:String" Name="customeDateSelection" />
@@ -157,10 +157,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:FolderExistsX>
-    <If Condition="[is_DailyFolderExist]" sap:VirtualizedContainerService.HintSize="622,1074" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[is_DailyFolderExist]" sap:VirtualizedContainerService.HintSize="622,57" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -188,7 +188,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <If Condition="[(String.IsNullOrEmpty(out_FromDate)) AndAlso (String.IsNullOrEmpty(out_ToDate))]" sap:VirtualizedContainerService.HintSize="622,3136" sap2010:WorkflowViewState.IdRef="If_6">
+    <If Condition="[io_FromDate =&quot;&quot; AndAlso io_ToDate=&quot;&quot;]" sap:VirtualizedContainerService.HintSize="622,3136" sap2010:WorkflowViewState.IdRef="If_6">
       <If.Then>
         <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="620,2875" sap2010:WorkflowViewState.IdRef="Sequence_25">
           <sap:WorkflowViewStateService.ViewState>
@@ -220,12 +220,12 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="416,275" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Please Enter From Date in Mentioned formate - dd-MMM-yyyy" Title="Select Date" TopMost="False">
                   <ui:InputDialog.Result>
-                    <OutArgument x:TypeArguments="x:String">[out_FromDate]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String">[io_FromDate]</OutArgument>
                   </ui:InputDialog.Result>
                 </ui:InputDialog>
                 <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="416,266" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Please Select To Date In Mentioned formate - dd-MMM-yyyy" Title="Select Date" TopMost="False">
                   <ui:InputDialog.Result>
-                    <OutArgument x:TypeArguments="x:String">[out_ToDate]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String">[io_ToDate]</OutArgument>
                   </ui:InputDialog.Result>
                 </ui:InputDialog>
               </Sequence>
@@ -239,7 +239,7 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_3">
                   <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[out_FromDate]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String">[io_FromDate]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
                     <InArgument x:TypeArguments="x:String">[Date.Now.AddDays(-1).ToString("dd-MMM-yyyy")]</InArgument>
@@ -247,7 +247,7 @@
                 </Assign>
                 <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_4">
                   <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[out_ToDate]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String">[io_ToDate]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
                     <InArgument x:TypeArguments="x:String">[Date.Now.ToString("dd-MMM-yyyy")]</InArgument>
@@ -256,7 +256,7 @@
               </Sequence>
             </If.Else>
           </If>
-          <If Condition="[out_FromDate.Replace(&quot;,&quot;,&quot;&quot;).IsNumeric AndAlso out_ToDate.Replace(&quot;,&quot;,&quot;&quot;).IsNumeric]" DisplayName="If-Date Or Not" sap:VirtualizedContainerService.HintSize="586,1585" sap2010:WorkflowViewState.IdRef="If_5">
+          <If Condition="[io_FromDate.Replace(&quot;,&quot;,&quot;&quot;).IsNumeric AndAlso io_ToDate.Replace(&quot;,&quot;,&quot;&quot;).IsNumeric]" DisplayName="If-Date Or Not" sap:VirtualizedContainerService.HintSize="586,1585" sap2010:WorkflowViewState.IdRef="If_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -292,15 +292,15 @@
                       <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="514,123" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Date Cannot Be Null Or Invalid&quot;]" />
                       <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="514,275" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Please Enter From Date in Mentioned formate - dd-MMM-yyyy" Title="Select Date" TopMost="False">
                         <ui:InputDialog.Result>
-                          <OutArgument x:TypeArguments="x:String">[out_FromDate]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String">[io_FromDate]</OutArgument>
                         </ui:InputDialog.Result>
                       </ui:InputDialog>
                       <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="514,275" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="Please Select To Date In Mentioned formate - dd-MMM-yyyy" Title="Select Date" TopMost="False">
                         <ui:InputDialog.Result>
-                          <OutArgument x:TypeArguments="x:String">[out_ToDate]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String">[io_ToDate]</OutArgument>
                         </ui:InputDialog.Result>
                       </ui:InputDialog>
-                      <If Condition="[out_FromDate.Replace(&quot;,&quot;,&quot;&quot;).IsNumeric AndAlso out_ToDate.Replace(&quot;,&quot;,&quot;&quot;).IsNumeric]" DisplayName="If-Date Validation" sap:VirtualizedContainerService.HintSize="514,483" sap2010:WorkflowViewState.IdRef="If_4">
+                      <If Condition="[io_FromDate.Replace(&quot;,&quot;,&quot;&quot;).IsNumeric AndAlso io_ToDate.Replace(&quot;,&quot;,&quot;&quot;).IsNumeric]" DisplayName="If-Date Validation" sap:VirtualizedContainerService.HintSize="514,483" sap2010:WorkflowViewState.IdRef="If_4">
                         <If.Then>
                           <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,90" sap2010:WorkflowViewState.IdRef="Sequence_17">
                             <sap:WorkflowViewStateService.ViewState>
@@ -323,7 +323,7 @@
                                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
                                     <ui:AssignOperation.To>
-                                      <OutArgument x:TypeArguments="x:String">[out_FromDate]</OutArgument>
+                                      <OutArgument x:TypeArguments="x:String">[io_FromDate]</OutArgument>
                                     </ui:AssignOperation.To>
                                     <ui:AssignOperation.Value>
                                       <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
@@ -331,7 +331,7 @@
                                   </ui:AssignOperation>
                                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
                                     <ui:AssignOperation.To>
-                                      <OutArgument x:TypeArguments="x:String">[out_ToDate]</OutArgument>
+                                      <OutArgument x:TypeArguments="x:String">[io_ToDate]</OutArgument>
                                     </ui:AssignOperation.To>
                                     <ui:AssignOperation.Value>
                                       <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
@@ -346,7 +346,7 @@
                     </Sequence>
                   </ui:InterruptibleWhile.Body>
                   <ui:InterruptibleWhile.Condition>
-                    <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="out_FromDate =&quot;&quot; AndAlso out_ToDate=&quot;&quot;" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
+                    <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="io_FromDate =&quot;&quot; AndAlso io_ToDate=&quot;&quot;" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
                   </ui:InterruptibleWhile.Condition>
                 </ui:InterruptibleWhile>
               </Sequence>
@@ -365,7 +365,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <TryCatch DisplayName="Try Catch-Open ENDB Portal" sap:VirtualizedContainerService.HintSize="622,1145" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch DisplayName="Try Catch-Open ENDB Portal" sap:VirtualizedContainerService.HintSize="622,1145" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="e81Ya6r68ESWDIoF3beNPQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="businessonline1.emiratesnbd.com/iportalweb/PortalLoginServlet" DesignTimeRectangle="716, 531, 430, 16" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='B' aaname='We are loading your statement data. You can try again after a minute.' /&gt;" Guid="e02ea91f-21f1-4b9b-9646-6c8d166ecd89" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='f' title='businessONLINE' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="d6cc77883e126d9f0b27117d10ff09ae.jpg" xmlns="">0KeWx8xTpr0-S8WXuPr1oWw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

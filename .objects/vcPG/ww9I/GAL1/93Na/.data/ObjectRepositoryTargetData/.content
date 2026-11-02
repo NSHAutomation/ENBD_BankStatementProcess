@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="pgL9hPbX9kOZWmfaYgkb6g" Reference="wIyEPjsK0keg3wV-E7qNPQ/93NaKvQB0kuSCxlyDIUknA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="_ahwdhh2UUyWD3D6q2Fq_Q" Reference="wIyEPjsK0keg3wV-E7qNPQ/93NaKvQB0kuSCxlyDIUknA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="businessonline2.emiratesnbd.com/iportalweb/PortalLoginServlet" DesignTimeRectangle="1272, 865, 12, 12" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[String.Format(&quot;&lt;webctrl aaname='{0}' tag='SPAN' idx='2' /&gt;&quot;,toDate(0).ToString)]" Guid="ebead9ea-7015-4fbe-b9a4-597e09f0ca5c" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='f' title='businessONLINE' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
-      <imageRef attrName="InformativeScreenshot" originalValue="1318bf07998dc98b05dcab91c56c9bd7.jpg" xmlns="">0RF36VvdPWE6t0Wp6eDAiyw</imageRef>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="businessonline2.emiratesnbd.com/iportalweb/PortalLoginServlet" DesignTimeRectangle="1272, 865, 12, 12" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[String.Format(&quot;&lt;webctrl tag='TABLE' class='x-date-inner' idx='2' /&gt;&lt;webctrl tag='TD' class='x-date-active*' innertext='{0}' /&gt;&quot;, toDayNo)]" Guid="ebead9ea-7015-4fbe-b9a4-597e09f0ca5c" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='f' title='businessONLINE' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="1318bf07998dc98b05dcab91c56c9bd7.jpg" xmlns="">0egFOvllwUESPNocjgcpc3A</imageRef>
     </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData Name="toDayNo" />
+    </scg:List>
     <x:String x:Key="ActivityType">Click</x:String>
   </ObjectRepositoryTargetData.Data>
 </ObjectRepositoryTargetData>
