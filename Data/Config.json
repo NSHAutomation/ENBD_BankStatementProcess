@@ -14,7 +14,7 @@
   "SystemExceptionMailBody":"<P><SPAN>Greetings,</SPAN></P><br><br><P><SPAN>ENDB Bank Statements Process Failed And Retrying</SPAN></P><br><br><P><SPAN>Thank you</SPAN></P>"
 },
   "Constants": {
-    "MaxRetryNumber": 0,
+    "MaxRetryNumber": 3,
     "MaxConsecutiveSystemExceptions": 0,
     "ExScreenshotsFolderPath": "Exceptions_Screenshots",
     "LogMessage_GetTransactionData": "Processing Transaction Number: ",
