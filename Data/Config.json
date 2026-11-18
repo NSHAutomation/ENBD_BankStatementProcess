@@ -5,7 +5,7 @@
   "DailyAccountActivitiesPath": "C:\\Users\\SalesBot\\OneDrive - NSHMI Development LLC (1)\\Finance_Dept - ENBD Bank Statement-BOT\\BOT\\",
   "AccountListExcelPath": "C:\\Users\\SalesBot\\OneDrive - NSHMI Development LLC (1)\\Finance_Dept - ENBD Bank Statement-BOT\\List of bank accounts.xlsx",
   "ListOfBanksExcel":"C:\\Users\\SalesBot\\OneDrive - NSHMI Development LLC (1)\\Finance_Dept - ENBD Bank Statement-BOT\\List of bank accounts.xlsx",
-  "ToMail":"abm@ncmme.ae",
+  "ToMail":"abm@ncmme.ae; se@ncmme.ae",
   "BCCMail":"automation@nshama.ae",
   "CCMail":"am@ncmme.ae",
   "SuccessMailSubject":"ENBD Bank Statements | Process Completed",
